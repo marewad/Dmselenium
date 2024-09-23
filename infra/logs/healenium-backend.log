@@ -1,0 +1,191 @@
+2024-09-09 10:23:09.092  INFO 1 - [       main] c.epam.healenium.Application     : Starting Application v3.4.4 using Java 17.0.10 with PID 1 (/healenium-backend.jar started by root in /) 
+2024-09-09 10:23:09.104  INFO 1 - [       main] c.epam.healenium.Application     : No active profile set, falling back to 1 default profile: "default" 
+2024-09-09 10:23:13.607  INFO 1 - [       main] .RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-09-09 10:23:14.246  INFO 1 - [       main] .RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 594 ms. Found 4 JPA repository interfaces. 
+2024-09-09 10:23:16.209  INFO 1 - [       main] o.s.b.w.e.t.TomcatWebServer      : Tomcat initialized with port 7878 (http) 
+2024-09-09 10:23:16.247  INFO 1 - [       main] o.a.c.core.StandardService       : Starting service [Tomcat] 
+2024-09-09 10:23:16.249  INFO 1 - [       main] o.a.c.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/10.1.18] 
+2024-09-09 10:23:16.366  INFO 1 - [       main] o.a.c.c.C.[.[localhost].[/]      : Initializing Spring embedded WebApplicationContext 
+2024-09-09 10:23:16.368  INFO 1 - [       main] rvletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7017 ms 
+2024-09-09 10:23:17.128  INFO 1 - [       main] c.z.hikari.HikariDataSource      : HikariPool-1 - Starting... 
+2024-09-09 10:23:17.631  INFO 1 - [       main] c.z.hikari.HikariDataSource      : HikariPool-1 - Start completed. 
+2024-09-09 10:23:17.973  INFO 1 - [       main] liquibase.database               : Set default schema name to healenium 
+2024-09-09 10:23:19.399  INFO 1 - [       main] liquibase.changelog              : Reading from healenium.databasechangelog 
+2024-09-09 10:23:19.526  INFO 1 - [       main] liquibase.ui                     : Database is up to date, no changesets to execute 
+2024-09-09 10:23:19.536  INFO 1 - [       main] liquibase.changelog              : Reading from healenium.databasechangelog 
+2024-09-09 10:23:19.565  INFO 1 - [       main] liquibase.util                   : UPDATE SUMMARY 
+2024-09-09 10:23:19.567  INFO 1 - [       main] liquibase.util                   : Run:                          0 
+2024-09-09 10:23:19.569  INFO 1 - [       main] liquibase.util                   : Previously run:              10 
+2024-09-09 10:23:19.570  INFO 1 - [       main] liquibase.util                   : Filtered out:                 0 
+2024-09-09 10:23:19.572  INFO 1 - [       main] liquibase.util                   : ------------------------------- 
+2024-09-09 10:23:19.574  INFO 1 - [       main] liquibase.util                   : Total change sets:           10 
+2024-09-09 10:23:19.579  INFO 1 - [       main] liquibase.util                   : Update summary generated 
+2024-09-09 10:23:19.692  INFO 1 - [       main] liquibase.lockservice            : Successfully released change log lock 
+2024-09-09 10:23:19.712  INFO 1 - [       main] liquibase.command                : Command execution complete 
+2024-09-09 10:23:20.400  INFO 1 - [       main] o.h.j.internal.util.LogHelper    : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-09-09 10:23:20.692  INFO 1 - [       main] org.hibernate.Version            : HHH000412: Hibernate ORM core version 6.4.1.Final 
+2024-09-09 10:23:20.843  INFO 1 - [       main] o.h.c.i.RegionFactoryInitiator   : HHH000026: Second-level cache disabled 
+2024-09-09 10:23:22.443  INFO 1 - [       main] .o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-09-09 10:23:22.546  WARN 1 - [       main] org.hibernate.orm.deprecation    : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2024-09-09 10:23:24.928  WARN 1 - [       main] o.h.m.internal.MetadataContext   : HHH015011: Unable to locate static metamodel field : com.epam.healenium.model.domain.Selector_#nodePathWrapper; this may or may not indicate a problem with the static metamodel 
+2024-09-09 10:23:24.937  INFO 1 - [       main] h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+2024-09-09 10:23:24.945  INFO 1 - [       main] ontainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-09-09 10:23:25.975  INFO 1 - [       main] o.s.d.j.r.q.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used. 
+2024-09-09 10:23:27.611  INFO 1 - [       main] .a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2024-09-09 10:23:29.253  INFO 1 - [       main] .s.b.a.e.w.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator' 
+2024-09-09 10:23:29.507  INFO 1 - [       main] o.s.b.w.e.t.TomcatWebServer      : Tomcat started on port 7878 (http) with context path '' 
+2024-09-09 10:23:30.397  INFO 1 - [       main] healenium                        : [Migrate] Migrated 13 Selectors 
+2024-09-09 10:23:30.437  INFO 1 - [       main] healenium                        : [Migrate] Migrated 0 Healings 
+2024-09-09 10:23:30.660  INFO 1 - [       main] c.epam.healenium.Application     : Started Application in 24.13 seconds (process running for 26.986) 
+2024-09-09 10:27:03.344  INFO 1 - [hutdownHook] ontainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-09-09 10:27:03.354  INFO 1 - [hutdownHook] c.z.hikari.HikariDataSource      : HikariPool-1 - Shutdown initiated... 
+2024-09-09 10:27:03.359  INFO 1 - [hutdownHook] c.z.hikari.HikariDataSource      : HikariPool-1 - Shutdown completed. 
+2024-09-09 10:27:27.712  INFO 1 - [       main] c.epam.healenium.Application     : Starting Application v3.4.4 using Java 17.0.10 with PID 1 (/healenium-backend.jar started by root in /) 
+2024-09-09 10:27:27.729  INFO 1 - [       main] c.epam.healenium.Application     : No active profile set, falling back to 1 default profile: "default" 
+2024-09-09 10:27:30.864  INFO 1 - [       main] .RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-09-09 10:27:31.256  INFO 1 - [       main] .RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 370 ms. Found 4 JPA repository interfaces. 
+2024-09-09 10:27:33.678  INFO 1 - [       main] o.s.b.w.e.t.TomcatWebServer      : Tomcat initialized with port 7878 (http) 
+2024-09-09 10:27:33.721  INFO 1 - [       main] o.a.c.core.StandardService       : Starting service [Tomcat] 
+2024-09-09 10:27:33.722  INFO 1 - [       main] o.a.c.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/10.1.18] 
+2024-09-09 10:27:33.859  INFO 1 - [       main] o.a.c.c.C.[.[localhost].[/]      : Initializing Spring embedded WebApplicationContext 
+2024-09-09 10:27:33.861  INFO 1 - [       main] rvletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5935 ms 
+2024-09-09 10:27:34.503  INFO 1 - [       main] c.z.hikari.HikariDataSource      : HikariPool-1 - Starting... 
+2024-09-09 10:27:34.892  INFO 1 - [       main] c.z.hikari.HikariDataSource      : HikariPool-1 - Start completed. 
+2024-09-09 10:27:35.167  INFO 1 - [       main] liquibase.database               : Set default schema name to healenium 
+2024-09-09 10:27:36.484  INFO 1 - [       main] liquibase.changelog              : Reading from healenium.databasechangelog 
+2024-09-09 10:27:36.671  INFO 1 - [       main] liquibase.ui                     : Database is up to date, no changesets to execute 
+2024-09-09 10:27:36.676  INFO 1 - [       main] liquibase.changelog              : Reading from healenium.databasechangelog 
+2024-09-09 10:27:36.707  INFO 1 - [       main] liquibase.util                   : UPDATE SUMMARY 
+2024-09-09 10:27:36.712  INFO 1 - [       main] liquibase.util                   : Run:                          0 
+2024-09-09 10:27:36.717  INFO 1 - [       main] liquibase.util                   : Previously run:              10 
+2024-09-09 10:27:36.719  INFO 1 - [       main] liquibase.util                   : Filtered out:                 0 
+2024-09-09 10:27:36.731  INFO 1 - [       main] liquibase.util                   : ------------------------------- 
+2024-09-09 10:27:36.734  INFO 1 - [       main] liquibase.util                   : Total change sets:           10 
+2024-09-09 10:27:36.738  INFO 1 - [       main] liquibase.util                   : Update summary generated 
+2024-09-09 10:27:36.815  INFO 1 - [       main] liquibase.lockservice            : Successfully released change log lock 
+2024-09-09 10:27:36.820  INFO 1 - [       main] liquibase.command                : Command execution complete 
+2024-09-09 10:27:37.130  INFO 1 - [       main] o.h.j.internal.util.LogHelper    : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-09-09 10:27:37.327  INFO 1 - [       main] org.hibernate.Version            : HHH000412: Hibernate ORM core version 6.4.1.Final 
+2024-09-09 10:27:37.498  INFO 1 - [       main] o.h.c.i.RegionFactoryInitiator   : HHH000026: Second-level cache disabled 
+2024-09-09 10:27:38.400  INFO 1 - [       main] .o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-09-09 10:27:38.511  WARN 1 - [       main] org.hibernate.orm.deprecation    : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2024-09-09 10:27:41.805  WARN 1 - [       main] o.h.m.internal.MetadataContext   : HHH015011: Unable to locate static metamodel field : com.epam.healenium.model.domain.Selector_#nodePathWrapper; this may or may not indicate a problem with the static metamodel 
+2024-09-09 10:27:41.815  INFO 1 - [       main] h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+2024-09-09 10:27:41.823  INFO 1 - [       main] ontainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-09-09 10:27:43.187  INFO 1 - [       main] o.s.d.j.r.q.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used. 
+2024-09-09 10:27:46.076  INFO 1 - [       main] .a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2024-09-09 10:27:48.587  INFO 1 - [       main] .s.b.a.e.w.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator' 
+2024-09-09 10:27:48.919  INFO 1 - [       main] o.s.b.w.e.t.TomcatWebServer      : Tomcat started on port 7878 (http) with context path '' 
+2024-09-09 10:27:49.236  INFO 1 - [       main] c.epam.healenium.Application     : Started Application in 23.399 seconds (process running for 26.299) 
+2024-09-09 10:28:52.175  INFO 1 - [7878-exec-1] o.a.c.c.C.[.[localhost].[/]      : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-09 10:28:52.176  INFO 1 - [7878-exec-1] o.s.w.s.DispatcherServlet        : Initializing Servlet 'dispatcherServlet' 
+2024-09-09 10:28:52.179  INFO 1 - [7878-exec-1] o.s.w.s.DispatcherServlet        : Completed initialization in 2 ms 
+2024-09-09 10:43:01.113  INFO 1 - [       main] c.epam.healenium.Application     : Starting Application v3.4.4 using Java 17.0.10 with PID 1 (/healenium-backend.jar started by root in /) 
+2024-09-09 10:43:01.136  INFO 1 - [       main] c.epam.healenium.Application     : No active profile set, falling back to 1 default profile: "default" 
+2024-09-09 10:43:10.982  INFO 1 - [       main] .RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-09-09 10:43:12.281  INFO 1 - [       main] .RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1189 ms. Found 4 JPA repository interfaces. 
+2024-09-09 10:43:17.670  INFO 1 - [       main] o.s.b.w.e.t.TomcatWebServer      : Tomcat initialized with port 7878 (http) 
+2024-09-09 10:43:17.731  INFO 1 - [       main] o.a.c.core.StandardService       : Starting service [Tomcat] 
+2024-09-09 10:43:17.733  INFO 1 - [       main] o.a.c.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/10.1.18] 
+2024-09-09 10:43:17.998  INFO 1 - [       main] o.a.c.c.C.[.[localhost].[/]      : Initializing Spring embedded WebApplicationContext 
+2024-09-09 10:43:17.999  INFO 1 - [       main] rvletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 16331 ms 
+2024-09-09 10:43:19.880  INFO 1 - [       main] c.z.hikari.HikariDataSource      : HikariPool-1 - Starting... 
+2024-09-09 10:43:21.771  INFO 1 - [       main] c.z.hikari.HikariDataSource      : HikariPool-1 - Start completed. 
+2024-09-09 10:43:22.927  INFO 1 - [       main] liquibase.database               : Set default schema name to healenium 
+2024-09-09 10:43:25.786  INFO 1 - [       main] liquibase.changelog              : Reading from healenium.databasechangelog 
+2024-09-09 10:43:26.042  INFO 1 - [       main] liquibase.ui                     : Database is up to date, no changesets to execute 
+2024-09-09 10:43:26.064  INFO 1 - [       main] liquibase.changelog              : Reading from healenium.databasechangelog 
+2024-09-09 10:43:26.110  INFO 1 - [       main] liquibase.util                   : UPDATE SUMMARY 
+2024-09-09 10:43:26.113  INFO 1 - [       main] liquibase.util                   : Run:                          0 
+2024-09-09 10:43:26.114  INFO 1 - [       main] liquibase.util                   : Previously run:              10 
+2024-09-09 10:43:26.115  INFO 1 - [       main] liquibase.util                   : Filtered out:                 0 
+2024-09-09 10:43:26.117  INFO 1 - [       main] liquibase.util                   : ------------------------------- 
+2024-09-09 10:43:26.118  INFO 1 - [       main] liquibase.util                   : Total change sets:           10 
+2024-09-09 10:43:26.119  INFO 1 - [       main] liquibase.util                   : Update summary generated 
+2024-09-09 10:43:26.244  INFO 1 - [       main] liquibase.lockservice            : Successfully released change log lock 
+2024-09-09 10:43:26.249  INFO 1 - [       main] liquibase.command                : Command execution complete 
+2024-09-09 10:43:26.966  INFO 1 - [       main] o.h.j.internal.util.LogHelper    : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-09-09 10:43:27.615  INFO 1 - [       main] org.hibernate.Version            : HHH000412: Hibernate ORM core version 6.4.1.Final 
+2024-09-09 10:43:27.986  INFO 1 - [       main] o.h.c.i.RegionFactoryInitiator   : HHH000026: Second-level cache disabled 
+2024-09-09 10:43:30.053  INFO 1 - [       main] .o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-09-09 10:43:30.363  WARN 1 - [       main] org.hibernate.orm.deprecation    : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2024-09-09 10:43:37.531  WARN 1 - [       main] o.h.m.internal.MetadataContext   : HHH015011: Unable to locate static metamodel field : com.epam.healenium.model.domain.Selector_#nodePathWrapper; this may or may not indicate a problem with the static metamodel 
+2024-09-09 10:43:37.552  INFO 1 - [       main] h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+2024-09-09 10:43:37.573  INFO 1 - [       main] ontainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-09-09 10:43:40.452  INFO 1 - [       main] o.s.d.j.r.q.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used. 
+2024-09-09 10:43:44.215  INFO 1 - [       main] .a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2024-09-09 10:43:47.774  INFO 1 - [       main] .s.b.a.e.w.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator' 
+2024-09-09 10:43:48.232  INFO 1 - [       main] o.s.b.w.e.t.TomcatWebServer      : Tomcat started on port 7878 (http) with context path '' 
+2024-09-09 10:43:48.731  INFO 1 - [       main] c.epam.healenium.Application     : Started Application in 52.805 seconds (process running for 62.162) 
+2024-09-09 10:48:02.034  INFO 1 - [hutdownHook] ontainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-09-09 10:48:02.038  INFO 1 - [hutdownHook] c.z.hikari.HikariDataSource      : HikariPool-1 - Shutdown initiated... 
+2024-09-09 10:48:02.040  INFO 1 - [hutdownHook] c.z.hikari.HikariDataSource      : HikariPool-1 - Shutdown completed. 
+2024-09-09 11:33:50.842  INFO 1 - [       main] c.epam.healenium.Application     : Starting Application v3.4.4 using Java 17.0.10 with PID 1 (/healenium-backend.jar started by root in /) 
+2024-09-09 11:33:50.850  INFO 1 - [       main] c.epam.healenium.Application     : No active profile set, falling back to 1 default profile: "default" 
+2024-09-09 11:33:53.428  INFO 1 - [       main] .RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2024-09-09 11:33:53.842  INFO 1 - [       main] .RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 393 ms. Found 4 JPA repository interfaces. 
+2024-09-09 11:33:56.246  INFO 1 - [       main] o.s.b.w.e.t.TomcatWebServer      : Tomcat initialized with port 7878 (http) 
+2024-09-09 11:33:56.286  INFO 1 - [       main] o.a.c.core.StandardService       : Starting service [Tomcat] 
+2024-09-09 11:33:56.287  INFO 1 - [       main] o.a.c.core.StandardEngine        : Starting Servlet engine: [Apache Tomcat/10.1.18] 
+2024-09-09 11:33:56.394  INFO 1 - [       main] o.a.c.c.C.[.[localhost].[/]      : Initializing Spring embedded WebApplicationContext 
+2024-09-09 11:33:56.396  INFO 1 - [       main] rvletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5369 ms 
+2024-09-09 11:33:57.200  INFO 1 - [       main] c.z.hikari.HikariDataSource      : HikariPool-1 - Starting... 
+2024-09-09 11:33:57.660  INFO 1 - [       main] c.z.hikari.HikariDataSource      : HikariPool-1 - Start completed. 
+2024-09-09 11:33:58.042  INFO 1 - [       main] liquibase.database               : Set default schema name to healenium 
+2024-09-09 11:33:59.216  INFO 1 - [       main] liquibase.changelog              : Reading from healenium.databasechangelog 
+2024-09-09 11:33:59.317  INFO 1 - [       main] liquibase.ui                     : Database is up to date, no changesets to execute 
+2024-09-09 11:33:59.322  INFO 1 - [       main] liquibase.changelog              : Reading from healenium.databasechangelog 
+2024-09-09 11:33:59.345  INFO 1 - [       main] liquibase.util                   : UPDATE SUMMARY 
+2024-09-09 11:33:59.347  INFO 1 - [       main] liquibase.util                   : Run:                          0 
+2024-09-09 11:33:59.348  INFO 1 - [       main] liquibase.util                   : Previously run:              10 
+2024-09-09 11:33:59.350  INFO 1 - [       main] liquibase.util                   : Filtered out:                 0 
+2024-09-09 11:33:59.353  INFO 1 - [       main] liquibase.util                   : ------------------------------- 
+2024-09-09 11:33:59.355  INFO 1 - [       main] liquibase.util                   : Total change sets:           10 
+2024-09-09 11:33:59.358  INFO 1 - [       main] liquibase.util                   : Update summary generated 
+2024-09-09 11:33:59.419  INFO 1 - [       main] liquibase.lockservice            : Successfully released change log lock 
+2024-09-09 11:33:59.423  INFO 1 - [       main] liquibase.command                : Command execution complete 
+2024-09-09 11:33:59.701  INFO 1 - [       main] o.h.j.internal.util.LogHelper    : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2024-09-09 11:33:59.895  INFO 1 - [       main] org.hibernate.Version            : HHH000412: Hibernate ORM core version 6.4.1.Final 
+2024-09-09 11:33:59.997  INFO 1 - [       main] o.h.c.i.RegionFactoryInitiator   : HHH000026: Second-level cache disabled 
+2024-09-09 11:34:00.738  INFO 1 - [       main] .o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer 
+2024-09-09 11:34:00.810  WARN 1 - [       main] org.hibernate.orm.deprecation    : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) 
+2024-09-09 11:34:02.715  WARN 1 - [       main] o.h.m.internal.MetadataContext   : HHH015011: Unable to locate static metamodel field : com.epam.healenium.model.domain.Selector_#nodePathWrapper; this may or may not indicate a problem with the static metamodel 
+2024-09-09 11:34:02.723  INFO 1 - [       main] h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) 
+2024-09-09 11:34:02.729  INFO 1 - [       main] ontainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2024-09-09 11:34:03.713  INFO 1 - [       main] o.s.d.j.r.q.QueryEnhancerFactory : Hibernate is in classpath; If applicable, HQL parser will be used. 
+2024-09-09 11:34:05.799  INFO 1 - [       main] .a.w.s.WelcomePageHandlerMapping : Adding welcome page template: index 
+2024-09-09 11:34:07.567  INFO 1 - [       main] .s.b.a.e.w.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator' 
+2024-09-09 11:34:07.799  INFO 1 - [       main] o.s.b.w.e.t.TomcatWebServer      : Tomcat started on port 7878 (http) with context path '' 
+2024-09-09 11:34:08.411  INFO 1 - [       main] healenium                        : [Migrate] Migrated 2 Selectors 
+2024-09-09 11:34:08.471  INFO 1 - [       main] healenium                        : [Migrate] Migrated 0 Healings 
+2024-09-09 11:34:08.667  INFO 1 - [       main] c.epam.healenium.Application     : Started Application in 19.268 seconds (process running for 21.781) 
+2024-09-09 11:34:11.534  INFO 1 - [7878-exec-1] o.a.c.c.C.[.[localhost].[/]      : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-09 11:34:11.535  INFO 1 - [7878-exec-1] o.s.w.s.DispatcherServlet        : Initializing Servlet 'dispatcherServlet' 
+2024-09-09 11:34:11.537  INFO 1 - [7878-exec-1] o.s.w.s.DispatcherServlet        : Completed initialization in 1 ms 
+2024-09-09 11:34:35.873  INFO 1 - [7878-exec-3] healenium                        : [Save Elements] Request: By.xpath(//input[@id='username']) 
+2024-09-09 11:34:41.035  INFO 1 - [7878-exec-5] healenium                        : [Save Elements] Request: By.xpath(//input[@type='password']) 
+2024-09-09 11:34:46.113  INFO 1 - [7878-exec-4] healenium                        : [Save Elements] Request: By.xpath(//button[contains(text(), 'Login')]) 
+2024-09-09 11:34:53.047  INFO 1 - [7878-exec-6] healenium                        : [Save Elements] Request: By.xpath(//input[@id='input-vaadin-text-field-11']) 
+2024-09-09 11:34:58.191  INFO 1 - [7878-exec-7] healenium                        : [Get Reference] Request: RequestDto(locator=//vaadin-grid/vaadin-grid-cell-content/vaadin-grid-tree-toggle, className=rahulshertyacademy.commonmethods, methodName=screenNamee1, command=null, url=vaadin.dev.dawinci.cloud/ptsmc/app/)) 
+2024-09-09 11:34:58.597  INFO 1 - [7878-exec-8] healenium                        : [Save Elements] Request: By.xpath(//vaadin-grid/vaadin-grid-cell-content/vaadin-grid-tree-toggle) 
+2024-09-09 11:44:10.685  INFO 1 - [7878-exec-5] healenium                        : [Save Elements] Request: By.xpath(//input[@id='username']) 
+2024-09-09 11:44:15.870  INFO 1 - [7878-exec-9] healenium                        : [Save Elements] Request: By.xpath(//input[@type='password']) 
+2024-09-09 11:44:21.040  INFO 1 - [7878-exec-3] healenium                        : [Save Elements] Request: By.xpath(//button[contains(text(), 'Login')]) 
+2024-09-09 11:44:28.054  INFO 1 - [878-exec-10] healenium                        : [Save Elements] Request: By.xpath(//input[@id='input-vaadin-text-field-11']) 
+2024-09-09 11:44:33.199  INFO 1 - [7878-exec-1] healenium                        : [Get Reference] Request: RequestDto(locator=//vaadin-grid/vaadin-grid-cell-content/vaadin-grid-tree-toggle, className=rahulshertyacademy.commonmethods, methodName=screenNamee1, command=null, url=vaadin.dev.dawinci.cloud/ptsmc/app/)) 
+2024-09-09 11:44:42.170  INFO 1 - [7878-exec-4] healenium                        : [Save Elements] Request: By.xpath(//*[@id='nav.DN_CARGO_ID_NO']) 
+2024-09-09 11:44:42.293  INFO 1 - [7878-exec-6] healenium                        : [Save Elements] Request: By.xpath(//*[@id='nav.DN_CARGO_ID_NO']) 
+2024-09-09 11:44:45.436  INFO 1 - [7878-exec-7] healenium                        : [Save Elements] Request: By.xpath(//*[contains(text(), 'New')]) 
+2024-09-09 11:44:48.568  INFO 1 - [7878-exec-2] healenium                        : [Save Elements] Request: By.xpath(//*[@id='DETAILS.details.DN_CARGO_ID_NO']) 
+2024-09-09 11:44:48.653  INFO 1 - [7878-exec-8] healenium                        : [Save Elements] Request: By.xpath(//*[@id='DETAILS.details.START_LOCATION']) 
+2024-09-09 11:44:48.816  INFO 1 - [7878-exec-5] healenium                        : [Save Elements] Request: By.xpath(//*[@id='DETAILS.details.END_LOCATION']) 
+2024-09-09 11:44:49.009  INFO 1 - [7878-exec-9] healenium                        : [Save Elements] Request: By.xpath(//*[@id='DETAILS.details.DESCRIPTION']) 
+2024-09-09 11:44:49.095  INFO 1 - [7878-exec-3] healenium                        : [Save Elements] Request: By.xpath(//*[@id='DETAILS.details.DESCRIPTION']) 
+2024-09-09 11:44:49.254  INFO 1 - [878-exec-10] healenium                        : [Save Elements] Request: By.xpath(//*[@id='DETAILS.details.ITEM_NO_1_WEIGHT_KG']) 
+2024-09-09 11:44:49.401  INFO 1 - [7878-exec-1] healenium                        : [Save Elements] Request: By.xpath(//*[contains(text(), 'Save')]) 
+2024-09-09 11:44:54.525  INFO 1 - [7878-exec-4] healenium                        : [Save Elements] Request: By.xpath(//*[@id='nav.DN_CARGO_ID_NO']) 
+2024-09-09 11:53:29.173  INFO 1 - [7878-exec-7] healenium                        : [Save Elements] Request: By.xpath(//input[@id='username']) 
+2024-09-09 11:53:34.508  INFO 1 - [7878-exec-6] healenium                        : [Save Elements] Request: By.xpath(//input[@type='password']) 
+2024-09-09 12:20:08.398  INFO 1 - [hutdownHook] ontainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2024-09-09 12:20:08.410  INFO 1 - [hutdownHook] c.z.hikari.HikariDataSource      : HikariPool-1 - Shutdown initiated... 
+2024-09-09 12:20:08.416  INFO 1 - [hutdownHook] c.z.hikari.HikariDataSource      : HikariPool-1 - Shutdown completed. 
