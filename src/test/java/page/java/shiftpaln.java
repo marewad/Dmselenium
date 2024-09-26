@@ -2,6 +2,7 @@ package page.java;
 
 import java.awt.Desktop.Action;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +15,7 @@ public class shiftpaln extends commonmethods{
 	
 	WebDriver driver;
 	Actions actions;
-	//Action s = new Action(driver);
+	
 	
 	public shiftpaln(WebDriver driver) {
 		super(driver);
@@ -22,7 +23,7 @@ public class shiftpaln extends commonmethods{
         PageFactory.initElements(driver, this);
         actions = new Actions(driver);
 	}
-//	Actions actions = new Actions(driver);
+
 	
 	 @FindBy(xpath = "//*[@id='details.shiftplan.START_DATE']/input")
 	 WebElement Startdate;
@@ -59,50 +60,35 @@ public class shiftpaln extends commonmethods{
 	 
 	 
 	 public void sendshiftplanValue() throws InterruptedException {
-		    rightsidetextField();
-			Thread.sleep(5000);
-			screenNamee2(names);
-			Thread.sleep(3000);
+		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 rightsidetextField();
+		 screenNamee2(names);
 				
 		}
 
 	public void creatDetails() throws InterruptedException {
-		//Search();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		inactive.click();
-		Thread.sleep(5000);
 		Add();
-		Thread.sleep(5000);
 		Startdate.sendKeys("21.08.2024");
-		Thread.sleep(2000);
 		d1.sendKeys("des");
-		Thread.sleep(2000);
 		Save();
-		Thread.sleep(5000);
+		
 	}
 	
 	public void createplan() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(3000);
 		plan.click();
 		Add();
-		Thread.sleep(5000);
 		dept.sendKeys("Bore");
-		Thread.sleep(5000);
 		Role.sendKeys("ATC");
-		Thread.sleep(3000);
 		Shift.sendKeys("Day");
-		Thread.sleep(3000);
 		Start_date.sendKeys("22.08.2024");
-		Thread.sleep(3000);
 		End_date.sendKeys("22.08.2024");
 		Save();
 		
 	}
 	
-	public void rightclick() throws InterruptedException {
-		actions.moveToElement(End_date).click().contextClick().build().perform();
-		//actions.contextClick(End_date).build().perform();		
-		Thread.sleep(10000);
-		//menu.click();
-		//Thread.sleep(5000);
-	}
 
 }

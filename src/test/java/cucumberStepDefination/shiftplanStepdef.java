@@ -1,5 +1,7 @@
 package cucumberStepDefination;
 
+import java.net.MalformedURLException;
+
 import data.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,7 +15,7 @@ public class shiftplanStepdef extends BaseTest{
 	shiftpaln s;
 	
 	@Given("logged in with username and passs")
-    public void logged_in_with_username_and_pass() throws InterruptedException  {
+    public void logged_in_with_username_and_pass() throws InterruptedException, MalformedURLException  {
 		initializeWebDriver();
 		s= new shiftpaln(driver);
 		loginPage p= new loginPage(driver);
@@ -32,7 +34,7 @@ public class shiftplanStepdef extends BaseTest{
 	public void search_and_add_the_values() throws InterruptedException {
 		s.creatDetails();
 		s.createplan();
-		s.rightclick();
+		
 	}
 
 }

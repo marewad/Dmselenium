@@ -1,8 +1,16 @@
 @cargo
 Feature: cargo creation
  
-@cargo
+  @cargo1
   Scenario Outline: verify cargo
     Given logged in with username and pass
     When select the cargo screen
-    Then click on add and create
+    And click on add and create
+    Then Verify cargo
+    
+    
+    @cargo2
+  Scenario Outline: verify google
+    Given url link
+    
+    

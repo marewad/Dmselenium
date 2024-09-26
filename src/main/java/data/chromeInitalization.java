@@ -13,9 +13,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class chromeInitalization {
 
-	//String screenValue = "cargo";
+
 	WebDriver driver;
 	public WebDriver initalization() throws InterruptedException, MalformedURLException {
+		
 	   WebDriverManager.chromedriver().setup();
        DesiredCapabilities caps = new DesiredCapabilities();
        caps.setBrowserName("chrome");
@@ -26,4 +27,6 @@ public class chromeInitalization {
 
         return selfHealingDriver; //
 	}
+	
+	
 }

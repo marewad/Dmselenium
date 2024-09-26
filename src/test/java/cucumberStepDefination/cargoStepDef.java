@@ -1,8 +1,11 @@
 package cucumberStepDefination;
 
+import java.net.MalformedURLException;
+
 import org.testng.annotations.BeforeClass;
 
 import data.BaseTest;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,7 +20,7 @@ public class cargoStepDef extends BaseTest {
 
 	
 	@Given("logged in with username and pass")
-    public void logged_in_with_username_and_pass() throws InterruptedException  {
+    public void logged_in_with_username_and_pass() throws InterruptedException, MalformedURLException  {
 		initializeWebDriver();
 		c = new CargoPage(driver);
 		loginPage p= new loginPage(driver);
@@ -28,18 +31,28 @@ public class cargoStepDef extends BaseTest {
 	
 	@When("select the cargo screen")
 	public void select_the_cargo_screen() throws InterruptedException  {
-		
-		//CargoPage c= new CargoPage(driver);
 		c.sendCargoValue();
 		
 		
 		
 	}
 	
-	@Then("click on add and create")
+	@And("click on add and create")
 	public void click_on_add_and_create() throws InterruptedException {
-		//CargoPage c= new CargoPage(driver);
 		c.newCargo();
+	}
+	
+	@Then("Verify cargo")
+	public void Verify_cargo() throws InterruptedException {
+		c.verifyRegistered();
+	}
+	
+	@Given("url link")
+    public void url_link() throws InterruptedException, MalformedURLException {
+		initializeWebDriver();
+		c = new CargoPage(driver);
+		c.goole();
+		
 	}
 
 }
