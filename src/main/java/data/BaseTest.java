@@ -6,6 +6,8 @@ import org.junit.AfterClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class BaseTest {
 
@@ -20,41 +22,8 @@ public class BaseTest {
 
 	}
 	    
-	    @AfterClass
+	  //  @AfterMathod
 	    public void screenshot() {
-	    	System.out.println("ssssssssssssssssssssssssssssssssss"
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ ""
-	    			+ "");
 //	    	if(result.getStatus()==ITestResult.FAILURE) {
 //	    		TakeScreenshot tc=(TakeScreenshot)driver;
 //	    	//	File src = tc.getScreenshotAs(OutputType.FILE); 
