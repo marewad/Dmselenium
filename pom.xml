@@ -142,7 +142,7 @@
         <parallel>classes</parallel>  <!-- Can also be "methods" or "both" -->
         <threadCount>4</threadCount>
           <suiteXmlFiles>
-            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
