@@ -1,7 +1,7 @@
-@cargo
+@mn
 Feature: cargo creation
    
-  @cargo
+  @mn
     Scenario Outline: verify shiftPlan
     Given logged in with username and passs
     When select the shiftplan screen
