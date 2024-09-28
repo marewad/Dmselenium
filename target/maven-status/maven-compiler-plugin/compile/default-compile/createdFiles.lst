@@ -1,2 +1,8 @@
 data\BaseTest.class
+page\java\shiftpaln.class
 data\chromeInitalization.class
+page\java\Testcases.class
+page\java\commonmethods.class
+enumOperation\ScreenName.class
+page\java\CargoPage.class
+page\java\loginPage.class

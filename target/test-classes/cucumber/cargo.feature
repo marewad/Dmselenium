@@ -9,7 +9,7 @@ Feature: cargo creation
     Then Verify cargo
     
     
-    @cargo2
+    @cargo
   Scenario Outline: verify google
     Given url link
     

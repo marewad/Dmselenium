@@ -1,4 +1,4 @@
-@shiftplan
+@cargo
 Feature: cargo creation
    
   @cargo
