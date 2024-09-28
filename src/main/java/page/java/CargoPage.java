@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import enumOperation.ScreenName;
 import junit.framework.Assert;
 
 
@@ -42,9 +43,6 @@ public class CargoPage extends commonmethods  {
 	 @FindBy(xpath = "//*[@id='DETAILS.details.START_LOCATION']")
 	 WebElement fromLoc;
 	 
-//	 @FindBy(xpath = "//*[contains(text(), 'New')]")
-//	 WebElement add;
-	 
 	 @FindBy(xpath = "//*[@id='DETAILS.details.DN_CARGO_ID_NO']")
 	 WebElement no;
 	 
@@ -66,7 +64,7 @@ public class CargoPage extends commonmethods  {
 	public void sendCargoValue() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		rightsidetextField2();
-		screenNamee1(names);
+		screenNamee(names, ScreenName.CARGO);
 		
 	}
 	

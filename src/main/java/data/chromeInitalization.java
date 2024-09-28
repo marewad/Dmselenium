@@ -2,7 +2,6 @@ package data;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;

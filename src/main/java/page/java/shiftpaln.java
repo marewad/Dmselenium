@@ -11,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import enumOperation.ScreenName;
+
 public class shiftpaln extends commonmethods{
 	
 	WebDriver driver;
@@ -62,7 +64,7 @@ public class shiftpaln extends commonmethods{
 	 public void sendshiftplanValue() throws InterruptedException {
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		 rightsidetextField();
-		 screenNamee2(names);
+		 screenNamee(names, ScreenName.SHIFT_PLAN);
 				
 		}
 
