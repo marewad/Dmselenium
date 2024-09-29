@@ -4,12 +4,15 @@ import java.awt.Desktop.Action;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.time.DateUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 
 import enumOperation.ScreenName;
 
@@ -58,8 +61,22 @@ public class shiftpaln extends commonmethods{
 	 List<WebElement> names;
 	 
 	 @FindBy(xpath = "//*[text()='Set POB Count for Period']")
-	 WebElement menu;
+	 WebElement SetPobCountforPeriodMenu;
 	 
+	 @FindBy(xpath = "//vaadin-grid[@id='shiftplan_roles']")
+	 WebElement Grid;
+	 
+	 @FindBy(id = "shiftplan_roles.MENU_SET_POB_FOR_PERIOD.POB_COUNT")
+	 WebElement POBcountValue;
+	 
+	 @FindBy(xpath = "//*[text()='Delete POB Count for Period']")
+	 WebElement DeletePobCountforPeriodMenu;
+	 
+	 @FindBy(id = "shiftplan_roles.MENU_DELETE_POB_FOR_PERIOD.START_DATE")
+	 WebElement PeriodStartDate;
+	 
+	 @FindBy(id = "shiftplan_roles.MENU_DELETE_POB_FOR_PERIOD.END_DATE")
+	 WebElement PeriodEndDate;
 	 
 	 public void sendshiftplanValue() throws InterruptedException {
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -72,7 +89,7 @@ public class shiftpaln extends commonmethods{
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		inactive.click();
 		Add();
-		Startdate.sendKeys("21.08.2024");
+		Startdate.sendKeys(getCurrentDate("dd.MM.yyyy"));
 		d1.sendKeys("des");
 		Save();
 		
@@ -86,10 +103,36 @@ public class shiftpaln extends commonmethods{
 		dept.sendKeys("Bore");
 		Role.sendKeys("ATC");
 		Shift.sendKeys("Day");
-		Start_date.sendKeys("22.08.2024");
-		End_date.sendKeys("22.08.2024");
+		Start_date.sendKeys(getCurrentDate("dd.MM.yyyy"));
+		End_date.sendKeys(getFutureDate("dd.MM.yyyy",1));
 		Save();
 		
+	    
+	}
+	
+	public void setPobCountforPeriodMenu() throws InterruptedException {
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(3000);
+	    actions.contextClick(Grid).build().perform();
+	    Thread.sleep(3000);
+	    SetPobCountforPeriodMenu.click();
+	    POBcountValue.sendKeys("5");
+	    actions.keyDown(Keys.CONTROL).sendKeys("s");
+	    Thread.sleep(3000);
+	}
+
+
+	public void deletePobCountforPeriodMenu() throws InterruptedException {
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(3000);
+		actions.contextClick(Grid).build().perform();
+		Thread.sleep(3000);
+	    DeletePobCountforPeriodMenu.click();
+	    PeriodStartDate.sendKeys(getCurrentDate("dd.MM.yyyy"));
+	    PeriodEndDate.sendKeys(getFutureDate("dd.MM.yyyy",1));
+	    Thread.sleep(2000);
+	    actions.keyDown(Keys.CONTROL).sendKeys("s");
+	    	
 	}
 	
 

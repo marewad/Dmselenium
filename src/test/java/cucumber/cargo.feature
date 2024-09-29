@@ -1,16 +1,38 @@
-@mm
+@cargo
 Feature: cargo creation
  
-  @mm
+  @cargo
   Scenario Outline: verify cargo
     Given logged in with username and pass
     When select the cargo screen
-    And click on add and create
-    Then Verify cargo
+    And Create new cargo
+    Then Verify cargo status as registered
+    
+    
+    @cargo
+    Scenario Outline: verify cargo
+    Given logged in with username and pass
+    When select the cargo screen
+    And Create new cargo
+    Then Verify cargo status as Approved
+    
+    @cargo
+    Scenario Outline: verify cargo
+    Given logged in with username and pass
+    When select the cargo screen
+    And Create new cargo
+    Then Verify cargo status as Rejected
+    
+    @cargo
+    Scenario Outline: verify cargo
+    Given logged in with username and pass
+    When select the cargo screen
+    And Create new cargo
+    Then Verify Menu Go to Change log
     
     
     @mm
-  Scenario Outline: verify google
+    Scenario Outline: verify google
     Given url link
     
     

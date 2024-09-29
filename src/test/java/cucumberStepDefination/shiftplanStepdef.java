@@ -30,11 +30,27 @@ public class shiftplanStepdef extends BaseTest{
 	
 	}
 	
-	@Then("search and add the values")
-	public void search_and_add_the_values() throws InterruptedException {
+	@Then("Create new plan and save it")
+	public void Create_new_plan_and_save_it() throws InterruptedException {
 		s.creatDetails();
 		s.createplan();
 		
 	}
+	
+	@Then("Verify the Set Pob Count for Period menu")
+	public void Verify_the_Set_Pob_Count_for_Period_menu() throws InterruptedException {
+		s.setPobCountforPeriodMenu();
+		
+		
+	}
+	
+	@Then("Verify the delete Pob Count for Period menu")
+	public void Verify_the_delete_Pob_Count_for_Period_menu() throws InterruptedException {
+		s.deletePobCountforPeriodMenu();
+		
+		
+	}
+	
+	
 
 }

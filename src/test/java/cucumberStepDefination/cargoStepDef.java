@@ -37,15 +37,32 @@ public class cargoStepDef extends BaseTest {
 		
 	}
 	
-	@And("click on add and create")
-	public void click_on_add_and_create() throws InterruptedException {
+	@And("Create new cargo")
+	public void Create_new_cargo() throws InterruptedException {
 		c.newCargo();
 	}
 	
-	@Then("Verify cargo")
-	public void Verify_cargo() throws InterruptedException {
+	@Then("Verify cargo status as registered")
+	public void Verify_cargo_status_as_registered() throws InterruptedException {
 		c.verifyRegistered();
 	}
+	
+	
+	@Then("Verify cargo status as Approved")
+	public void Verify_cargo_status_as_Approved() throws InterruptedException {
+		c.verifyApproved();
+	}
+	
+	@Then("Verify cargo status as Rejected")
+	public void Verify_cargo_status_as_Rejected() throws InterruptedException {
+		c.verifyRejected();
+	}
+	
+	@Then("Verify Menu Go to Change log")
+	public void Verify_Menu_Go_to_Change_log() throws InterruptedException {
+		c.verifyMenuGotoChangelog();
+	}
+	
 	
 	@Given("url link")
     public void url_link() throws InterruptedException, MalformedURLException {

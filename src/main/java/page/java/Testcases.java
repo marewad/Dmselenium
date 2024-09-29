@@ -9,14 +9,6 @@ import data.BaseTest;
 
 public class Testcases extends BaseTest {
 
-//	protected WebDriver driver;
-//
-//    @BeforeClass
-//    public void initializeWebDriver() throws InterruptedException {
-//        Standalonnetest k = new Standalonnetest();
-//        driver = k.initalization();
-//    }
-
     @Test(priority=1)
     public void performLogin() throws InterruptedException {
         loginPage p = new loginPage(driver);

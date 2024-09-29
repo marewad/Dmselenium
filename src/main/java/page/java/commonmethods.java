@@ -1,5 +1,7 @@
 package page.java;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -16,32 +18,9 @@ public class commonmethods {
 
 
 	public commonmethods(WebDriver driver) {
-		// TODO Auto-generated constructor stub
+		
 		this.driver = driver;
 	}
-
-//	public void chromeup(){
-//	driver.get("https://vaadin.dev.dawinci.cloud");
-//	driver.manage().window().maximize();
-//	
-//	}
-
-//public void screenNamee1(String string) throws InterruptedException {
-//	
-//	for (WebElement element : string) {
-//        String text = element.getText();
-//        System.out.println("Value: " + text);
-//        if(text.equalsIgnoreCase("Cargo")) {
-//        	Thread.sleep(5000);
-//        	Actions actions = new Actions(driver);
-//        	actions.click(element).build().perform();
-//        
-//        	
-//        	break;
-//        	
-//        }
-//}
-	//}
 
 public void Add() {
 	
@@ -83,6 +62,37 @@ public void screenNamee(List<WebElement> name, ScreenName targetScreen) throws I
         }
     }
 }
+
+
+public static String getCurrentDate(String format) {
+    LocalDate today = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+    return today.format(formatter);
+}
+
+
+public static String getFutureDate(String format, int daysToAdd) {
+    LocalDate futureDate = LocalDate.now().plusDays(daysToAdd);
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+    return futureDate.format(formatter);
+}
+
+
+public static String getPastDate(String format, int daysToSubtract) {
+    LocalDate pastDate = LocalDate.now().minusDays(daysToSubtract);
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+    return pastDate.format(formatter);
+}
+
+
+public static String getDateWithOffset(String format, int daysOffset) {
+    LocalDate date = LocalDate.now().plusDays(daysOffset);
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+    return date.format(formatter);
+}
+
+
+
 
 
 	

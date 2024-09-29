@@ -1,6 +1,7 @@
 package page.java;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -8,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -22,11 +24,12 @@ public class CargoPage extends commonmethods  {
 	
 	String cargoNo;
 	WebDriver driver;
-
+	Actions actions;
     public CargoPage(WebDriver driver) {
     	super(driver);
        this.driver = driver;
         PageFactory.initElements(driver, this);
+        actions = new Actions(driver);
     }
 
 	
@@ -58,8 +61,20 @@ public class CargoPage extends commonmethods  {
 	 @FindBy(xpath = "//*[@id='nav.CARGO_STATUS_POPUP']")
 	 WebElement register;
 	 
+	 @FindBy(xpath = "//vaadin-grid[@class='feature-no-sort-indicator with-emphasis']")
+	 WebElement list;
+	 
+	 @FindBy(xpath = "//*[text()='Approve Cargo']")
+	 WebElement approveCargoMenu;
+	 
+	 @FindBy(xpath = "//*[text()='Reject Cargo']")
+	 WebElement rejectCargoMenu;
+	 
+	 @FindBy(xpath = "//*[text()='Go to Change log']")
+	 WebElement verifyMenuGotoChangelogMenu;
+	 
 	
-	
+	 
 	@Test(priority=1)
 	public void sendCargoValue() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -83,7 +98,6 @@ public class CargoPage extends commonmethods  {
 	    description.sendKeys("s");
 	    weight.sendKeys("10");
 	    Save();
-	    qwert.sendKeys(cargoNo);
 	}
 	
 	
@@ -93,12 +107,47 @@ public class CargoPage extends commonmethods  {
 		cargoNoNavigator.sendKeys(cargoNo);
 		register.sendKeys("Registered");
 		Search();	
-		String url =driver.getCurrentUrl();
-					
+		
 		
 	}
 
 
+	public void verifyApproved() throws InterruptedException {
+		Thread.sleep(5000);
+		actions.contextClick(list).build().perform();
+		Thread.sleep(3000);
+		approveCargoMenu.click();
+		
+	}
+	
+	
+	public void verifyRejected() throws InterruptedException {
+		Thread.sleep(5000);
+		actions.contextClick(list).build().perform();
+		Thread.sleep(3000);
+		rejectCargoMenu.click();
+		
+	}
+	
+	public void verifyMenuGotoChangelog() throws InterruptedException {
+		Thread.sleep(5000);
+		actions.contextClick(list).build().perform();
+		Thread.sleep(3000);
+		String originalWindow = driver.getWindowHandle();
+		verifyMenuGotoChangelogMenu.click();
+		Thread.sleep(5000);
+		Set<String> allWindows = driver.getWindowHandles();
+		for (String windowHandle : allWindows) {
+		    if (!windowHandle.equals(originalWindow)) {
+		        driver.switchTo().window(windowHandle);
+		        break;
+		    }
+		}
+		Thread.sleep(5000);
+	    String p = driver.getTitle();
+	    Assert.assertEquals(p, "Change Log");
+		
+	}
 	public void goole() throws InterruptedException {
 			driver.get("https://www.google.com");
 	        driver.manage().window().maximize();
@@ -110,6 +159,15 @@ public class CargoPage extends commonmethods  {
 	      
 			
 		}
+
+
+	
+
+
+	
+
+
+	
 		
 	}
 	
