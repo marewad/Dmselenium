@@ -1,28 +1,28 @@
-package page.java;
+//package page.java;
+//
+//import org.openqa.selenium.WebDriver;
+//import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.BeforeMethod;
+//import org.testng.annotations.Test;
+//
+//import data.BaseTest;
+//
+//public class Testcases {
+//
+//    @Test(priority=1)
+//    public void performLogin() throws InterruptedException {
+//        loginPage p = new loginPage(driver);
+//        p.loginTest("marewdny", "ko20la");
+//    }
+//
+//    @Test(priority=2)
+//    public void performCargoOperations() throws InterruptedException {
+//        CargoPage c = new CargoPage(testContextSetup);
+//        c.sendCargoValue();
+//        c.newCargo();
+//    }
 
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import data.BaseTest;
-
-public class Testcases extends BaseTest {
-
-    @Test(priority=1)
-    public void performLogin() throws InterruptedException {
-        loginPage p = new loginPage(driver);
-        p.loginTest("marewdny", "ko20la");
-    }
-
-    @Test(priority=2)
-    public void performCargoOperations() throws InterruptedException {
-        CargoPage c = new CargoPage(driver);
-        c.sendCargoValue();
-        c.newCargo();
-    }
-
-}
+//}
 	 
 	 
 	 

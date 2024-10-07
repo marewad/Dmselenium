@@ -1,5 +1,6 @@
 package page.java;
 
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -8,19 +9,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
+
+import data.TestContextSetup;
 import enumOperation.ScreenName;
 
 public class commonmethods {
 	
 	WebDriver driver;
-	
+	TestContextSetup testContextSetup;
 	
 
-
-	public commonmethods(WebDriver driver) {
-		
-		this.driver = driver;
-	}
+	public commonmethods(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+        this.testContextSetup = testContextSetup;
+        this.driver = testContextSetup.webDriverManager.getDriver();
+        PageFactory.initElements(driver, this);
+    }
 
 public void Add() {
 	
@@ -44,7 +48,7 @@ public void rightsidetextField() {
 
 public void rightsidetextField2() {
 	
-	driver.findElement(By.xpath("//input[@id='input-vaadin-text-field-11']")).sendKeys("Cargo");
+	driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("Cargo");
 }
 
 

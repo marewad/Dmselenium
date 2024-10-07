@@ -1,9 +1,11 @@
 package page.java;
 
+import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
+import data.TestContextSetup;
+ 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -20,18 +22,21 @@ import junit.framework.Assert;
 
 
 
-public class CargoPage extends commonmethods  {
+public class CargoPage extends commonmethods{
 	
 	String cargoNo;
 	WebDriver driver;
+	TestContextSetup testContextSetup;
 	Actions actions;
-    public CargoPage(WebDriver driver) {
-    	super(driver);
-       this.driver = driver;
+
+	public CargoPage(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+		super(testContextSetup);
+        this.testContextSetup = testContextSetup;
+        this.driver = testContextSetup.webDriverManager.getDriver();
         PageFactory.initElements(driver, this);
         actions = new Actions(driver);
+     
     }
-
 	
 	 
 	 @FindBy(xpath = "//vaadin-grid/vaadin-grid-cell-content/vaadin-grid-tree-toggle")
@@ -78,6 +83,7 @@ public class CargoPage extends commonmethods  {
 	@Test(priority=1)
 	public void sendCargoValue() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Thread.sleep(3000);
 		rightsidetextField2();
 		screenNamee(names, ScreenName.CARGO);
 		
@@ -159,19 +165,10 @@ public class CargoPage extends commonmethods  {
 	      
 			
 		}
-
-
-	
-
-
-	
-
-
-	
 		
 	}
 	
-//	
+
 
 
 

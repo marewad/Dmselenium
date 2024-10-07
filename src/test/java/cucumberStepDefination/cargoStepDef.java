@@ -1,29 +1,41 @@
 package cucumberStepDefination;
 
 import java.net.MalformedURLException;
+import cucumberStepDefination.config.PicoDependencyInjection;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 
-import data.BaseTest;
+
+import data.TestContextSetup;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import page.java.CargoPage;
+import page.java.commonmethods;
 import page.java.loginPage;
-import page.java.shiftpaln;
+import page.java.shiftPlan;
 
-public class cargoStepDef extends BaseTest {
+public class cargoStepDef {
 	
 	
-	private CargoPage c;
+	
+	private TestContextSetup testContextSetup;  // This will be injected via PicoContainer
+    private WebDriver driver;
+    commonmethods commonMethods;
+    CargoPage cargoPage;
+    
+    public cargoStepDef(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+        this.testContextSetup = testContextSetup; // Pass the initialized TestContextSetup object
+        this.cargoPage = new CargoPage(testContextSetup); // Pass it to CargoPage
+        this.commonMethods = new commonmethods(testContextSetup); // Pass it to commonmethods
+    }
 
 	
 	@Given("logged in with username and pass")
     public void logged_in_with_username_and_pass() throws InterruptedException, MalformedURLException  {
-		initializeWebDriver();
-		c = new CargoPage(driver);
-		loginPage p= new loginPage(driver);
+		loginPage p= new loginPage(testContextSetup);
 		p.loginTest("marewdny", "ko20la");
 		
 		
@@ -31,7 +43,7 @@ public class cargoStepDef extends BaseTest {
 	
 	@When("select the cargo screen")
 	public void select_the_cargo_screen() throws InterruptedException  {
-		c.sendCargoValue();
+		cargoPage.sendCargoValue();
 		
 		
 		
@@ -39,36 +51,36 @@ public class cargoStepDef extends BaseTest {
 	
 	@And("Create new cargo")
 	public void Create_new_cargo() throws InterruptedException {
-		c.newCargo();
+		cargoPage.newCargo();
 	}
 	
 	@Then("Verify cargo status as registered")
 	public void Verify_cargo_status_as_registered() throws InterruptedException {
-		c.verifyRegistered();
+		cargoPage.verifyRegistered();
 	}
 	
 	
 	@Then("Verify cargo status as Approved")
 	public void Verify_cargo_status_as_Approved() throws InterruptedException {
-		c.verifyApproved();
+		cargoPage.verifyApproved();
 	}
 	
 	@Then("Verify cargo status as Rejected")
 	public void Verify_cargo_status_as_Rejected() throws InterruptedException {
-		c.verifyRejected();
+		cargoPage.verifyRejected();
 	}
 	
 	@Then("Verify Menu Go to Change log")
 	public void Verify_Menu_Go_to_Change_log() throws InterruptedException {
-		c.verifyMenuGotoChangelog();
+		cargoPage.verifyMenuGotoChangelog();
 	}
 	
 	
 	@Given("url link")
     public void url_link() throws InterruptedException, MalformedURLException {
-		initializeWebDriver();
-		c = new CargoPage(driver);
-		c.goole();
+		//initializeWebDriver();
+		//c = new CargoPage(driver);
+		cargoPage.goole();
 		
 	}
 

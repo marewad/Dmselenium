@@ -1,8 +1,9 @@
 package page.java;
 
+import java.net.MalformedURLException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
+import data.TestContextSetup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,15 +14,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import data.TestContextSetup;
+
 public class loginPage {
 	
 	WebDriver driver;
-
-
-
-    public loginPage(WebDriver driver) {
-    	
-        this.driver = driver;
+	TestContextSetup testContextSetup;
+	
+	public loginPage(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+		
+        this.testContextSetup = testContextSetup;
+       this.driver = testContextSetup.webDriverManager.getDriver();
         PageFactory.initElements(driver, this);
     }
 
@@ -69,4 +72,3 @@ public class loginPage {
         login.click();    
     }
     }
-
