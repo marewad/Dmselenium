@@ -4,12 +4,17 @@ import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.time.Duration;
+
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import data.TestContextSetup;
 import enumOperation.ScreenName;
@@ -95,7 +100,23 @@ public static String getDateWithOffset(String format, int daysOffset) {
     return date.format(formatter);
 }
 
+public WebElement isElementLoaded(WebElement elementToBeLoaded) {
+	WebDriverWait wait1 = new WebDriverWait(driver, 10); 
+    WebElement element = wait1.until(ExpectedConditions.visibilityOf(elementToBeLoaded));
+    return element;
+}
 
+public void entervalue(WebElement ele , String text) throws InterruptedException {
+    WebDriverWait wait1 = new WebDriverWait(driver, 10); 
+    WebElement societe = wait1.until(ExpectedConditions.elementToBeClickable(isElementLoaded(ele)));
+    //societe.clear();
+    //Thread.sleep(1000);
+    societe.sendKeys(text);
+    while (!societe.getAttribute("value").equals(text)) {
+        societe.sendKeys(Keys.TAB);
+    }
+    Thread.sleep(1000);
+}
 
 
 

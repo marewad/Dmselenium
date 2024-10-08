@@ -34,7 +34,6 @@ public class WebDriverManager {
         SelfHealingDriver selfHealingDriver = SelfHealingDriver.create(remoteDriver);
         selfHealingDriver.manage().window().maximize();
         selfHealingDriver.get("https://vaadin.dev.dawinci.cloud");
-
         return selfHealingDriver; //
 	}
 	

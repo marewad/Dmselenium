@@ -16,6 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import Util.PropertiesUtil;
 import enumOperation.ScreenName;
 import junit.framework.Assert;
 
@@ -28,16 +29,19 @@ public class CargoPage extends commonmethods{
 	WebDriver driver;
 	TestContextSetup testContextSetup;
 	Actions actions;
+	commonmethods common;
 
 	public CargoPage(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
 		super(testContextSetup);
         this.testContextSetup = testContextSetup;
+        common = new commonmethods(testContextSetup);
         this.driver = testContextSetup.webDriverManager.getDriver();
         PageFactory.initElements(driver, this);
         actions = new Actions(driver);
      
     }
 	
+	String Cargo_PROP_Path = "src/test/resources/testdataProperties/Cargo.properties";
 	 
 	 @FindBy(xpath = "//vaadin-grid/vaadin-grid-cell-content/vaadin-grid-tree-toggle")
 	 List<WebElement> names;
@@ -98,11 +102,14 @@ public class CargoPage extends commonmethods{
 		Add();
 		cargoNo=no.getAttribute("value");
 		System.out.print(cargoNo+"edddddddddddddddddddd");
-		fromLoc.sendKeys("BGO");
-		toLoc.sendKeys("STA");
+		//fromLoc.sendKeys("BGO");
+	    common.entervalue(fromLoc, PropertiesUtil.getProperty(Cargo_PROP_Path, "from_location"));
+		//toLoc.sendKeys("STA");
+	    common.entervalue(toLoc, PropertiesUtil.getProperty(Cargo_PROP_Path, "to_location"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", description);
-	    description.sendKeys("s");
-	    weight.sendKeys("10");
+	   // description.sendKeys("s");
+	    common.entervalue(description, PropertiesUtil.getProperty(Cargo_PROP_Path, "description"));
+	    common.entervalue(weight, PropertiesUtil.getProperty(Cargo_PROP_Path, "Heavy_weight"));
 	    Save();
 	}
 	
