@@ -1,6 +1,6 @@
 package page.java;
 
-import java.net.MalformedURLException;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import data.TestContextSetup;
@@ -21,7 +21,7 @@ public class loginPage {
 	WebDriver driver;
 	TestContextSetup testContextSetup;
 	
-	public loginPage(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+	public loginPage(TestContextSetup testContextSetup) throws InterruptedException, IOException {
 		
         this.testContextSetup = testContextSetup;
        this.driver = testContextSetup.webDriverManager.getDriver();
@@ -64,7 +64,7 @@ public class loginPage {
     @FindBy(xpath = "//*[@id='nav.CARGO_STATUS_POPUP']")
     WebElement register;
 
-
+@Test
     public void loginTest(String Name ,String word) throws InterruptedException {
     	driver.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS);
         userName.sendKeys(Name);

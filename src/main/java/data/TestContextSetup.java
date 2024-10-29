@@ -1,6 +1,6 @@
 package data;
 
-import java.net.MalformedURLException;
+import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 
@@ -8,9 +8,8 @@ public class TestContextSetup {
     public WebDriverManager webDriverManager;
     public WebDriver driver;
 
-    public TestContextSetup() throws MalformedURLException, InterruptedException {
+    public TestContextSetup() throws InterruptedException, IOException {
         webDriverManager = new WebDriverManager();
         driver = webDriverManager.getDriver();
     }
 }
-

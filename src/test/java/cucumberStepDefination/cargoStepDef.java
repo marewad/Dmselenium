@@ -1,8 +1,7 @@
 package cucumberStepDefination;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
-import cucumberStepDefination.config.PicoDependencyInjection;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 
@@ -26,7 +25,7 @@ public class cargoStepDef {
     commonmethods commonMethods;
     CargoPage cargoPage;
     
-    public cargoStepDef(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+    public cargoStepDef(TestContextSetup testContextSetup) throws InterruptedException, IOException {
         this.testContextSetup = testContextSetup; // Pass the initialized TestContextSetup object
         this.cargoPage = new CargoPage(testContextSetup); // Pass it to CargoPage
         this.commonMethods = new commonmethods(testContextSetup); // Pass it to commonmethods
@@ -34,7 +33,7 @@ public class cargoStepDef {
 
 	
 	@Given("logged in with username and pass")
-    public void logged_in_with_username_and_pass() throws InterruptedException, MalformedURLException  {
+    public void logged_in_with_username_and_pass() throws InterruptedException, IOException  {
 		loginPage p= new loginPage(testContextSetup);
 		p.loginTest("marewdny", "ko20la");
 		

@@ -7,15 +7,14 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ScreenshotUtil {
 
-    public static void takeScreenshot(TestContextSetup testContextSetup, String scenarioName) throws MalformedURLException, InterruptedException {
+    public static void takeScreenshot(TestContextSetup testContextSetup, String scenarioName) throws InterruptedException, IOException {
         // Ensure you have the WebDriver instance
-        TakesScreenshot ts = (TakesScreenshot) testContextSetup.webDriverManager.getDriver();
+        TakesScreenshot ts = (TakesScreenshot) testContextSetup.webDriverManager.initializeDriver();
         File source = ts.getScreenshotAs(OutputType.FILE);
 
         try {

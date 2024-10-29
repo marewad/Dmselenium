@@ -1,5 +1,6 @@
 package cucumberStepDefination;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 
 import org.openqa.selenium.WebDriver;
@@ -22,17 +23,18 @@ public class shiftplanStepdef{
     private WebDriver driver;
     commonmethods commonMethods;
     shiftPlan shiftplan;
+    loginPage loginPage;
     
-    public shiftplanStepdef(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+    public shiftplanStepdef(TestContextSetup testContextSetup) throws InterruptedException, IOException {
         this.testContextSetup = testContextSetup; // Pass the initialized TestContextSetup object
         this.shiftplan = new shiftPlan(testContextSetup); // Pass it to CargoPage
         this.commonMethods = new commonmethods(testContextSetup); // Pass it to commonmethods
+        this.loginPage = new loginPage(testContextSetup);
     }
 	
 	@Given("logged in with username and passs")
     public void logged_in_with_username_and_pass() throws InterruptedException, MalformedURLException  {
-		loginPage p= new loginPage(testContextSetup);
-		p.loginTest("marewdny", "ko20la");
+		loginPage.loginTest("Marewdny", "ko20la");
 		
 		
 	}

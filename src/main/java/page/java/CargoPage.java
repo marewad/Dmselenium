@@ -1,11 +1,12 @@
 package page.java;
 
-import java.net.MalformedURLException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import data.TestContextSetup;
- 
+import enumOperation.ScreenName;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -17,7 +18,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import Util.PropertiesUtil;
-import enumOperation.ScreenName;
 import junit.framework.Assert;
 
 
@@ -31,7 +31,7 @@ public class CargoPage extends commonmethods{
 	Actions actions;
 	commonmethods common;
 
-	public CargoPage(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+	public CargoPage(TestContextSetup testContextSetup) throws InterruptedException, IOException {
 		super(testContextSetup);
         this.testContextSetup = testContextSetup;
         common = new commonmethods(testContextSetup);
@@ -175,7 +175,6 @@ public class CargoPage extends commonmethods{
 		
 	}
 	
-
 
 
 

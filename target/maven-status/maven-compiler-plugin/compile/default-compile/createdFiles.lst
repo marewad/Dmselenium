@@ -1,7 +1,9 @@
 page\java\shiftPlan.class
+Util\ConfigReader.class
 data\TestContextSetup.class
 page\java\commonmethods.class
 enumOperation\ScreenName.class
+Util\PropertiesUtil.class
 data\WebDriverManager.class
 page\java\CargoPage.class
 page\java\loginPage.class

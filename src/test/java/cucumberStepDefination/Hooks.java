@@ -4,7 +4,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
-import java.net.MalformedURLException;
+import java.io.IOException;
 
 import Util.ScreenshotUtil;
 import data.TestContextSetup;
@@ -27,10 +27,12 @@ public class Hooks {
     }
     
     @After
-    public void afterScenario(Scenario scenario) throws MalformedURLException, InterruptedException {
+    public void afterScenario(Scenario scenario) throws InterruptedException, IOException {
         if (scenario.isFailed()) {
             ScreenshotUtil.takeScreenshot(testContextSetup, scenario.getName());
         }
     }
+    
+  
 }
 

@@ -1,7 +1,7 @@
 package page.java;
 
 import java.awt.Desktop.Action;
-import java.net.MalformedURLException;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -24,7 +24,7 @@ public class shiftPlan extends commonmethods{
 	Actions actions;
 	
 
-	public shiftPlan(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+	public shiftPlan(TestContextSetup testContextSetup) throws InterruptedException, IOException {
 		super(testContextSetup);
         this.testContextSetup = testContextSetup;
         this.driver = testContextSetup.webDriverManager.getDriver();

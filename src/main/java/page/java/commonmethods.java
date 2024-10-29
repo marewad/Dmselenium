@@ -1,9 +1,9 @@
 package page.java;
 
-import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.io.IOException;
 import java.time.Duration;
 
 
@@ -25,7 +25,7 @@ public class commonmethods {
 	TestContextSetup testContextSetup;
 	
 
-	public commonmethods(TestContextSetup testContextSetup) throws MalformedURLException, InterruptedException {
+	public commonmethods(TestContextSetup testContextSetup) throws InterruptedException, IOException {
         this.testContextSetup = testContextSetup;
         this.driver = testContextSetup.webDriverManager.getDriver();
         PageFactory.initElements(driver, this);
@@ -48,7 +48,7 @@ public void Search() {
 
 public void rightsidetextField() {
 	
-	driver.findElement(By.xpath("//input[@id='input-vaadin-text-field-11']")).sendKeys("shift Plan");
+	driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("Shift Plan");
 }
 
 public void rightsidetextField2() {
@@ -122,7 +122,6 @@ public void entervalue(WebElement ele , String text) throws InterruptedException
 
 	
 }
-
 
 
 
