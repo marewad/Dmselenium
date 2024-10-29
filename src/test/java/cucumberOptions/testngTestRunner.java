@@ -24,6 +24,13 @@ public class testngTestRunner extends AbstractTestNGCucumberTests {
     public Object[][] scenarios() {
         return super.scenarios();
     }
+	
+	@BeforeClass
+    @Parameters("cucumberOptions")
+    public void setupCucumberOptions(String cucumberOptions) {
+        String tag = System.getProperty("tag", cucumberOptions); // Default to Jenkins parameter
+        System.setProperty("cucumber.filter.tags", tag);
+    }
 	   
 	}
     

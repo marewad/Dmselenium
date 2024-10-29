@@ -2,6 +2,7 @@
 <suite name="Suite" parallel="tests" thread-count="1">
     <test name="ChromeTest">
         <parameter name="Browser" value="chrome" />
+        <parameter name="cucumberOptions" value="@tagFromJenkins" />
         <classes>
             <class name="cucumberOptions.testngTestRunner" />
         </classes>
