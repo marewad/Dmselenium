@@ -20,7 +20,7 @@ import data.WebDriverManager;  // Import your WebDriverManager class
 public class testngTestRunner extends AbstractTestNGCucumberTests {
    
 	@Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {
         return super.scenarios();
     }
