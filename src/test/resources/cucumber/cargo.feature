@@ -2,7 +2,7 @@
 Feature: cargo creation
  
   @cargo
-  Scenario Outline: verify cargo
+  Scenario: verify cargo
     Given logged in with username and pass
     When select the cargo screen
     And Create new cargo
@@ -10,21 +10,21 @@ Feature: cargo creation
     
     
     @cargo
-    Scenario Outline: verify cargo
+    Scenario: verify cargo
     Given logged in with username and pass
     When select the cargo screen
     And Create new cargo
     Then Verify cargo status as Approved
     
     @cargo
-    Scenario Outline: verify cargo
+    Scenario: verify cargo
     Given logged in with username and pass
     When select the cargo screen
     And Create new cargo
     Then Verify cargo status as Rejected
     
     @cargo
-    Scenario Outline: verify cargo
+    Scenario: verify cargo
     Given logged in with username and pass
     When select the cargo screen
     And Create new cargo
@@ -32,7 +32,7 @@ Feature: cargo creation
     
     
     @mm
-    Scenario Outline: verify google
+    Scenario: verify google
     Given url link
     
     
